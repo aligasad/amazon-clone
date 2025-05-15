@@ -5,8 +5,8 @@ import { IoSettings } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
-import { Link, Links, useNavigate } from "react-router-dom";
 import { Home, User, Layers, ShoppingCart, Menu, X } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Dialog,
   DialogPanel,
@@ -174,7 +174,7 @@ function Navbar() {
                   className="text-gray-700"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Admine
+                  <Link to={'/dashboard'} className="font-bold">ADMINE</Link>
                 </li>
               ) : (
                 ""
@@ -247,7 +247,7 @@ function Navbar() {
             <img
               src="https://cdn1.vectorstock.com/i/1000x1000/24/70/of-shopping-vector-23182470.jpg"
               alt="Prime"
-              className="w-10 h-8 rounded-sm object-cover object-right "
+              className="w-10 h-8 rounded-sm object-cover object-ryight "
             />
             <span>Kids</span>
           </Link>
@@ -335,12 +335,12 @@ function Navbar() {
 
       {/* Bottom Navbar */}
       <div
-        className={`lg:hidden fixed bottom-[-3px] left-0 w-full z-40  border-t shadow-md transition-transform duration-300 ${
+        className={`lg:hidden fixed bottom-[-45px] left-0 w-full z-40  border-t shadow-md transition-transform duration-300 ${
           showNavbar ? "translate-y-0" : "translate-y-full"
         }`}
         style={{ backgroundColor: mode === "dark" ? "#374151" : "white" }}
       >
-        <div className="flex justify-between items-center px-6 py-2">
+        <div className="flex justify-between items-start h-30 mt-2 px-6 py-2">
           <div className="flex flex-col items-center text-xs text-gray-700">
             <Link to={"/"} style={{ color: mode === "dark" ? "white" : "" }}>
               <Home className="h-6 w-6" />

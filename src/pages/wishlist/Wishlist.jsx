@@ -22,7 +22,7 @@ function Cart() {
   const cartItems = useSelector((state) => state.cart);
   const user = JSON.parse(localStorage.getItem("user"));
   const addCart = (product) => {
-    if (user) {
+    if (user) { 
       const existingItem = cartItems.some((item) => {
         return item.id === product.id;
       });

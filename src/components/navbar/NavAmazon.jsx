@@ -119,34 +119,38 @@ function Navbar() {
   // }, [menuOpen]);
 
   return (
-    <div className="bg-white sticky top-0 z-50 ">
+    <div className="bg-white sticky top-0 z-50">
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="fixed top-0 right-0 z-50 h-full flex">
+        <div className="fixed top-0 right-0 z-50 h-full flex items-end ">
           <div
-            className="flex-grow bg-black bg-opacity-40"
+            className="flex-grow bg-black bg-opacity-40 "
             onClick={() => setMenuOpen(false)}
           />
           <div
-            className="w-64 h-full bg-white shadow-lg p-4"
+            className="w-64 h-[50%]  bg-white shadow-lg p-4 py-5 mb-20 flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()}
+            style={{
+              backgroundColor: mode === "dark" ? "#374151" : "",
+              color: mode === "dark" ? "white" : "",
+            }}
           >
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">Menu</h2>
-              <X
-                className="cursor-pointer"
-                onClick={() => setMenuOpen(false)}
-              />
-            </div>
+            
             <ul className="space-y-4">
               <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
-                <Link to={"/orders"}>Your Orders</Link>
+                <Link
+                  to={"/orders"}
+                  style={{ color: mode === "dark" ? "white" : "" }}
+                >
+                  Your Orders
+                </Link>
               </li>
               <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
                 <Link
                   onClick={toggleDropdown}
                   to="/wishlist"
                   className="flex items-center gap-2"
+                  style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Wishlist{" "}
                   <p className="relative flex items-center">
@@ -161,12 +165,26 @@ function Navbar() {
                 </Link>
               </li>
               <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
-                <Link to={"/wishlist"}>Lorem</Link>
+                <Link
+                  to={"/wishlist"}
+                  style={{ color: mode === "dark" ? "white" : "" }}
+                >
+                  Lorem
+                </Link>
               </li>
               <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
-                <Link to={"/wishlist"}>Lorem</Link>
+                <Link
+                  to={"/wishlist"}
+                  style={{ color: mode === "dark" ? "white" : "" }}
+                >
+                  Lorem
+                </Link>
               </li>
-              <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
+              <li
+                className="text-gray-700"
+                onClick={() => setMenuOpen(false)}
+                style={{ color: mode === "dark" ? "white" : "" }}
+              >
                 Account Settings
               </li>
               {user?.user?.email === "asadalam4291@gmail.com" ? (
@@ -174,14 +192,20 @@ function Navbar() {
                   className="text-gray-700"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <Link to={'/dashboard'} className="font-bold">ADMINE</Link>
+                  <Link
+                    to={"/dashboard"}
+                    className="font-bold"
+                    style={{ color: mode === "dark" ? "red" : "" }}
+                  >
+                    ADMINE
+                  </Link>
                 </li>
               ) : (
                 ""
               )}
               {user ? (
                 <li
-                  className="p-2 hover:bg-gray-400 relative flex items-center gap-2"
+                  className=" hover:bg-gray-400 relative flex items-center gap-2"
                   onClick={() => setMenuOpen(false)}
                 >
                   <button
@@ -200,6 +224,14 @@ function Navbar() {
                 </li>
               )}
             </ul>
+            <div className="flex justify-between items-center mt-4">
+              <h2 className="text-lg font-semibold">Menu</h2>
+              <X
+                className="cursor-pointer"
+                onClick={() => setMenuOpen(false)}
+              />
+            </div>
+
           </div>
         </div>
       )}

@@ -164,28 +164,12 @@ function Navbar() {
                   </p>
                 </Link>
               </li>
-              <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
-                <Link
-                  to={"/wishlist"}
-                  style={{ color: mode === "dark" ? "white" : "" }}
-                >
-                  Lorem
-                </Link>
-              </li>
-              <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
-                <Link
-                  to={"/wishlist"}
-                  style={{ color: mode === "dark" ? "white" : "" }}
-                >
-                  Lorem
-                </Link>
-              </li>
               <li
                 className="text-gray-700"
                 onClick={() => setMenuOpen(false)}
                 style={{ color: mode === "dark" ? "white" : "" }}
               >
-                Account Settings
+                Account Settings X
               </li>
               {user?.user?.email === "asadalam4291@gmail.com" ? (
                 <li
@@ -367,7 +351,7 @@ function Navbar() {
 
       {/* Bottom Navbar */}
       <div
-        className={`lg:hidden fixed bottom-[-45px] left-0 w-full z-40  border-t shadow-md transition-transform duration-300 ${
+        className={`lg:hidden fixed bottom-[-60px] left-0 w-full z-40  border-t shadow-md transition-transform duration-300 ${
           showNavbar ? "translate-y-0" : "translate-y-full"
         }`}
         style={{ backgroundColor: mode === "dark" ? "#374151" : "white" }}

@@ -106,7 +106,7 @@ function ProductCard() {
                 .toLowerCase()
                 .includes(filterType)
             )
-            .slice(0, 8)
+            .slice(0, 10)
             .filter((obj) => obj.price.trim().includes(filterPrice))
             .map((item, index) => {
               const {

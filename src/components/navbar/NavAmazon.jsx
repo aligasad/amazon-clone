@@ -135,7 +135,6 @@ function Navbar() {
               color: mode === "dark" ? "white" : "",
             }}
           >
-            
             <ul className="space-y-4">
               <li className="text-gray-700" onClick={() => setMenuOpen(false)}>
                 <Link
@@ -215,7 +214,6 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
               />
             </div>
-
           </div>
         </div>
       )}
@@ -299,20 +297,25 @@ function Navbar() {
           </Link>
         </div>
         <div className="flex flex-col items-center text-xs">
-          <img
-            src="https://picsum.photos/100"
-            alt="MX Player"
-            className="w-10 h-8 rounded-sm object-cover "
-          />
-          <span>Lorem</span>
+          <Link to={"/shoes"}>
+            <img
+              src="https://ae01.alicdn.com/kf/HTB1Qg4XruOSBuNjy0Fdq6zDnVXaE/2018-Luxury-Brand-Men-s-Casual-Breathable-Shoes-for-Male-Winter-Spring-Male-Shoes-Men-Comfortable.jpg"
+              alt="Shoes"
+              className="w-10 h-8 rounded-sm object-cover "
+            />
+            <span>Shoes</span>
+          </Link>
         </div>
+
         <div className="flex flex-col items-center text-xs">
-          <img
-            src="https://picsum.photos/10"
-            alt="Lorem"
-            className="w-10 h-8 rounded-sm object-cover "
-          />
-          <span>Lorem</span>
+          <Link to={'/electronics'}>
+            <img
+              src="https://tse1.mm.bing.net/th?id=OIP.SyB8lZTvZUxvm6J0HwrhigHaES&pid=Api&P=0&h=180"
+              alt="Lorem"
+              className="w-10 h-8 rounded-sm object-cover "
+            />
+            <span>Electronics</span>
+          </Link>
         </div>
         <div className="flex flex-col items-center text-xs">
           <img
@@ -656,7 +659,7 @@ function Navbar() {
 
           <Link to={"/mobile"} onClick={resetFilter}>
             {" "}
-            <span>Mobile</span>{" "}
+            <span>Mobiles</span>{" "}
           </Link>
           <Link to={"/cloths"} onClick={resetFilter}>
             {" "}
@@ -666,17 +669,17 @@ function Navbar() {
             {" "}
             <span>Home & Kitchen</span>{" "}
           </Link>
-          <Link to={"https://www.amazon.in/deals?ref_=nav_cs_gb"}>
+          <Link to={"/electronics"}>
             {" "}
-            <span>Today's Deals</span>{" "}
+            <span>Electronics</span>{" "}
           </Link>
           <Link
             to={
-              "https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles"
+              "Shoes"
             }
           >
             {" "}
-            <span>Mobiles</span>{" "}
+            <span>Shoes</span>{" "}
           </Link>
           <Link
             to={

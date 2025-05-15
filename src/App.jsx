@@ -25,6 +25,8 @@ import Kids from "./pages/allproducts/Kids/Kids.jsx";
 import Mobile from "./pages/allproducts/Mobile/Mobile.jsx";
 import Cloths from "./pages/allproducts/Cloths/Mens/Cloths.jsx";
 import HomeKitchen from "./pages/allproducts/Home & Kitchen/HomeKitchen.jsx";
+import Electronics from "./pages/allproducts/Electronics/Electronics.jsx";
+import Shoes from "./pages/allproducts/Footwear/Shoes.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -96,6 +98,14 @@ function App() {
         {
           path: "/mobile",
           element: <Mobile />,
+        },
+        {
+          path: "/shoes",
+          element: <Shoes />
+        },
+        {
+          path: "/electronics",
+          element: <Electronics />
         },
         {
           path: "/homekitchen",

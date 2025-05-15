@@ -7,7 +7,7 @@ import { FaHeart } from "react-icons/fa6";
 import { addToWishlist } from "../../../redux/WishlistSlice";
 import { motion } from "framer-motion";
 
-function Mobile() {
+function Electronics() {
   const context = useData();
   const {
     mode,
@@ -91,14 +91,14 @@ function Mobile() {
               class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
               style={{ color: mode === "dark" ? "white" : "" }}
             >
-            Mobiles Collection
+            Electronics Collection
             </h1>
             <div class="h-1 w-20 bg-yellow-600 rounded"></div>
           </div>
 
           <div className="flex flex-wrap -m-4">
             {product
-              .filter((obj) => obj.type.toLowerCase().includes("mobile"))
+              .filter((obj) => obj.type.toLowerCase().includes("electronic"))
               .filter(
                 (obj) =>
                   obj.title.toLowerCase().includes(searchkey) ||
@@ -189,4 +189,4 @@ function Mobile() {
   );
 }
 
-export default Mobile;
+export default Electronics;

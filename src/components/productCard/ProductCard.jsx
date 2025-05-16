@@ -10,6 +10,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa6";
 function ProductCard() {
   const context = useData();
   const [isWished, setIsWished] = useState(false);
+  
   const {
     mode,
     product,
@@ -22,11 +23,14 @@ function ProductCard() {
     calcOffer,
   } = context;
   // console.log("ITEMS: ",product);
-  const dispatch = useDispatch();
+  // ====================={R E D U X - P A R T}===============================
+  const dispatch = useDispatch();  //Returns the dispatch function from the Redux store
   const cartItems = useSelector((state) => state.cart);
   const wishListitems = useSelector((state) => state.wishlist);
+  // =============================================================
   console.log("cartItems", cartItems);
   console.log("Wish List", wishListitems);
+  console.log("SELECTED",isWished);
 
   const user = JSON.parse(localStorage.getItem("user"));
   // add to cart if item is not already present
@@ -56,7 +60,8 @@ function ProductCard() {
       if (!existingItem) {
         dispatch(addToWishlist(product));
         toast.success("Item added to wishlist");
-        // setIsWished(!isWished);
+        setIsWished(!isWished);
+        console.log("SELECTED",isWished);
       } else {
         toast.warning("Item already added!");
       }

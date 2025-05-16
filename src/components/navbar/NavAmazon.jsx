@@ -360,20 +360,20 @@ function Navbar() {
         style={{ backgroundColor: mode === "dark" ? "#374151" : "white" }}
       >
         <div className="flex justify-between items-start h-30 mt-2 px-6 py-2">
-          <div className="flex flex-col items-center text-xs text-gray-700">
-            <Link to={"/"} style={{ color: mode === "dark" ? "white" : "" }}>
+          <div className=" text-xs text-gray-700">
+            <Link className="flex flex-col items-center" to={"/"} style={{ color: mode === "dark" ? "white" : "" }}>
               <Home className="h-6 w-6" />
               <span>Home</span>
             </Link>
           </div>
-          <div className="flex flex-col items-center text-xs text-gray-700">
-            <Link style={{ color: mode === "dark" ? "white" : "" }}>
+          <div className=" text-xs text-gray-700">
+            <Link className="flex flex-col items-center" style={{ color: mode === "dark" ? "white" : "" }}>
               <User className="h-6 w-6" />
               <span>You</span>
             </Link>
           </div>
-          <div className="flex flex-col items-center text-xs text-gray-700">
-            <Link style={{ color: mode === "dark" ? "white" : "" }}>
+          <div className=" text-xs text-gray-700">
+            <Link className="flex flex-col items-center" style={{ color: mode === "dark" ? "white" : "" }}>
               <Layers className="h-6 w-6" />
               <span>More</span>
             </Link>
@@ -389,8 +389,9 @@ function Navbar() {
               className="relative flex items-center space-x-1"
               style={{ color: mode === "dark" ? "white" : "" }}
             >
-              <span className="font-bold text-sm">
+              <span className="font-bold text-sm flex flex-col items-center">
                 <ShoppingCart className="h-6 w-6" />
+                <span className="font-semibold">Cart</span>
               </span>
               <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs rounded-full px-1">
                 {cartItems.length}
@@ -401,7 +402,7 @@ function Navbar() {
             className="flex flex-col items-center text-xs text-gray-700 cursor-pointer"
             onClick={() => setMenuOpen(true)}
           >
-            <Link style={{ color: mode === "dark" ? "white" : "" }}>
+            <Link className="flex flex-col items-center" style={{ color: mode === "dark" ? "white" : "" }}>
               <Menu className="h-6 w-6" />
               <span>Menu</span>
             </Link>

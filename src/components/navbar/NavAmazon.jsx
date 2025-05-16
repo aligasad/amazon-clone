@@ -665,13 +665,13 @@ function Navbar() {
             {" "}
             <span>Cloths</span>{" "}
           </Link>
-          <Link to={"/homekitchen"}>
+          <Link to={"/homekitchen"} onClick={resetFilter}>
             {" "}
             <span>Home & Kitchen</span>{" "}
           </Link>
-          <Link to={"/electronics"}>
+          <Link to={"/electronics"}onClick={resetFilter}>
             {" "}
-            <span>Electronics</span>{" "}
+            <span onClick={resetFilter}>Electronics</span>{" "}
           </Link>
           <Link
             to={
